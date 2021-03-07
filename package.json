@@ -1,0 +1,24 @@
+{
+    "name": "node-architecture",
+    "version": "0.0.1",
+    "private": true,
+    "workspaces": [
+        "user-service/**"
+    ],
+    "scripts": {
+        "prepare": "npm run compile",
+        "compile": "tsc --build --force tsconfig.json",
+        "start": "node user-service/user-boot"
+    },
+    "publishConfig": {
+        "registry": "https://npm.pkg.github.com/node-architecture"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git@github.com:david-urvoy/node-architecture.git",
+        "directory": "@david-urvoy/node-architecture"
+    },
+    "license": "Apache-2.0",
+    "author": "David Urvoy <https://github.com/david-urvoy>",
+    "keywords": []
+}

@@ -1,0 +1,23 @@
+version: "3.5"
+services:
+    user-service:
+        build: .
+        container_name: "user-service"
+        ports:
+          - "3001:3000"
+        depends_on:
+          - "database"
+        networks:
+            - microservices-network
+    database:
+        image: postgres
+        container_name: "database"
+        environment:
+            - "POSTGRES_PASSWORD=admin"
+        volumes:
+            - ./user-service/user-boot/db:/docker-entrypoint-initdb.d
+        networks:
+            - microservices-network
+networks:
+    microservices-network:
+        name: "microservices-network"

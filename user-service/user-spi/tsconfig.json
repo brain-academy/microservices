@@ -1,0 +1,15 @@
+{
+    "references": [
+        {
+            "path": "./user-repository"
+        },
+        {
+            "path": "../user-domain"
+        }
+    ],
+    "files": [],
+    "include": [],
+    "exclude": [
+        "**/node_modules"
+    ]
+}

@@ -1,0 +1,22 @@
+{
+    "extends": "../../../tsconfig.packages.json",
+    "compilerOptions": {
+        "rootDir": ".",
+        "outDir": "dist",
+        "allowSyntheticDefaultImports": true,
+        "esModuleInterop": true
+    },
+    "include": [
+        "index.ts",
+        "src/**/*.ts",
+        "test/**/*.ts"
+    ],
+    "references": [
+        {
+            "path": "../../user-domain"
+        },
+        {
+            "path": "../../user-spi/user-repository"
+        }
+    ]
+}

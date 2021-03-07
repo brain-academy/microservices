@@ -1,0 +1,21 @@
+{
+    "name": "user-repository",
+    "version": "0.0.1",
+    "private": true,
+    "main": "dist/index",
+    "types": "dist/index",
+    "scripts": {
+        "prepare": "tsc --build --force tsconfig.json",
+        "test": "jest"
+    },
+    "dependencies": {
+        "pg": "8.3.3",
+        "user-domain": "0.0.1",
+        "uuidv4": "6.2.6",
+        "uuid": "8.3.2"
+    },
+    "devDependencies": {
+        "@types/pg": "7.4.8",
+        "@types/uuid": "3.4.3"
+    }
+}

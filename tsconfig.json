@@ -1,0 +1,12 @@
+{
+    "references": [
+        {
+            "path": "./user-service"
+        }
+    ],
+    "files": [],
+    "include": [],
+    "exclude": [
+        "**/node_modules"
+    ]
+}

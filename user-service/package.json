@@ -1,0 +1,11 @@
+{
+    "name": "user-service",
+    "version": "0.0.1",
+    "private": true,
+    "workspaces": [
+        "user-domain",
+        "user-boot",
+        "user-api",
+        "user-spi"
+    ]
+}

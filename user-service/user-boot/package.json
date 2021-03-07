@@ -1,0 +1,35 @@
+{
+    "name": "user-boot",
+    "version": "0.0.1",
+    "private": true,
+    "main": "dist/index",
+    "types": "dist/index",
+    "scripts": {
+        "prepare": "tsc --build --force tsconfig.json",
+        "test": "jest"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.12.3",
+        "@babel/preset-env": "^7.12.1",
+        "@babel/preset-typescript": "^7.12.1",
+        "@types/cookie-parser": "^1.4.2",
+        "@types/express": "^4.17.9",
+        "@types/http-errors": "^1.8.0",
+        "@types/jest": "^26.0.15",
+        "@types/morgan": "^1.9.2",
+        "@types/node": "^13.11.1",
+        "babel-jest": "^26.6.1",
+        "jest": "^26.6.1",
+        "typescript": "^3.8.3",
+        "tslib": "2.0.1"
+    },
+    "dependencies": {
+        "cookie-parser": "~1.4.4",
+        "debug": "~2.6.9",
+        "express": "~4.16.1",
+        "http-errors": "~1.6.3",
+        "jade": "~1.11.0",
+        "morgan": "~1.9.1",
+        "user-rest": "0.0.1"
+    }
+}
