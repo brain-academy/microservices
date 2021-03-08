@@ -10,7 +10,7 @@ let app: Express = express()
 const port = 3000
 
 // view engine setup
-app.set('views', path.join(__dirname, 'views'))
+app.set('views', path.join(__dirname, './src/views'))
 app.set('view engine', 'jade')
 app.use(logger('dev'))
 app.use(express.json())

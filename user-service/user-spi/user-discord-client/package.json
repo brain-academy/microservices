@@ -1,0 +1,16 @@
+{
+    "name": "user-discord-client",
+    "version": "0.0.1",
+    "private": true,
+    "main": "dist/index",
+    "types": "dist/index",
+    "scripts": {
+        "prepare": "tsc --build --force tsconfig.json",
+        "test": "jest"
+    },
+    "dependencies": {
+        "user-domain": "0.0.1",
+        "discord.js": "^12.5.1",
+        "tslib": "^2.1.0"
+    }
+}

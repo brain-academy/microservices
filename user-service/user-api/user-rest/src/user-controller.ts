@@ -1,4 +1,5 @@
 import express, {Request, Response} from 'express'
+import {DiscordClient} from 'user-discord-client'
 import {User, UserService} from 'user-domain'
 import {UserRepository} from 'user-repository'
 import {v4} from 'uuid/interfaces'
@@ -6,7 +7,7 @@ import {v4} from 'uuid/interfaces'
 let users_router = express.Router()
 
 users_router.get('/', (_: Request, response: Response) => {
-    new UserService(new UserRepository()).find_all()
+    new UserService(new DiscordClient()).find_all()
         .then(users => response.send(users))
 })
 

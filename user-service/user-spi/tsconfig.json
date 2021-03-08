@@ -4,6 +4,9 @@
             "path": "./user-repository"
         },
         {
+            "path": "./user-discord-client"
+        },
+        {
             "path": "../user-domain"
         }
     ],

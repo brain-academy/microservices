@@ -8,10 +8,10 @@ export class UserService {
         public port: UserPort
     ) { }
 
-    find_all: () => Promise<User[]> = () => this.port.find_all()
-    get_user: (id: v4) => Promise<User> = id => this.port.get_user(id)
-    create_user: (user: User) => Promise<v4 | undefined> = user => this.port.create_user(user)
-    update_user: (id: v4, user: User) => void = (id, user) => this.port.update_user(id, user)
-    delete_user: (id: v4) => void = id => this.port.delete_user(id)
+    find_all: () => Promise<User[]> = () => this.port.findAll()
+    get_user: (id: v4) => Promise<User> = id => this.port.find(id)
+    create_user: (user: User) => Promise<v4 | undefined> = user => this.port.create(user)
+    update_user: (id: v4, user: User) => void = (id, user) => this.port.update(id, user)
+    delete_user: (id: v4) => void = id => this.port.delete(id)
 
 }
