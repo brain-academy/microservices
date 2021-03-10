@@ -10,3 +10,5 @@ export class User implements User {
     constructor(public name: string, public discordUsername: string) {
     }
 }
+
+export interface UserSearch {}

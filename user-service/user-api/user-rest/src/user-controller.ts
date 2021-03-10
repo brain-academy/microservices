@@ -4,29 +4,39 @@ import {User, UserService} from 'user-domain'
 import {UserRepository} from 'user-repository'
 import {v4} from 'uuid/interfaces'
 
-let users_router = express.Router()
+let userRouter = express.Router()
 
-users_router.get('/', (_: Request, response: Response) => {
-    new UserService(new DiscordClient()).find_all()
+userRouter.get('/', (_: Request, response: Response) => {
+    new UserService(new DiscordClient(), new DiscordClient()).findAll()
         .then(users => response.send(users))
 })
 
-users_router.get('/:id', ({params}: Request, response: Response) => {
-    new UserService(new UserRepository()).get_user(<v4>(params["id"] as unknown))
+userRouter.get('/:id', ({params}: Request, response: Response) => {
+    new UserService(new UserRepository(), new DiscordClient()).find(<v4>(params["id"] as unknown))
         .then(user => response.send(user))
 })
 
-users_router.post('/', ({body}: Request, response: Response) => {
-    new UserService(new UserRepository()).create_user(body as User)
+userRouter.post('/', ({body}: Request, response: Response) => {
+    new UserService(new UserRepository(), new DiscordClient()).create(body as User)
         .then(id => response.send(id))
 })
 
-users_router.put('/:id', ({params, body}: Request, response: Response) => {
-    response.send(new UserService(new UserRepository()).update_user(<v4>(params["id"] as unknown), body as User))
+userRouter.put('/:id', ({params, body}: Request, response: Response) => {
+    response.send(new UserService(new UserRepository(), new DiscordClient()).update(<v4>(params["id"] as unknown), body as User))
 })
 
-users_router.delete('/:id', ({params}: Request, response: Response) => {
-    response.send(new UserService(new UserRepository()).delete_user(<v4>(params["id"] as unknown)))
+userRouter.delete('/:id', ({params}: Request, response: Response) => {
+    response.send(new UserService(new UserRepository(), new DiscordClient()).delete(<v4>(params["id"] as unknown)))
 })
 
-export default users_router
+userRouter.get('/botc/subscriptions', (_: Request, response: Response) => {
+    return new UserService(new DiscordClient(), new DiscordClient).getBotcSubscriptions()
+        .then(it => {
+            let serialized = Array.from(it)
+            console.log(serialized)
+            return serialized
+        })
+        .then(it => response.status(200).json(it))
+})
+
+export default userRouter

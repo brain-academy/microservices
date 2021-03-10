@@ -1,1 +1,1 @@
-export {DiscordClient} from './src/discord-client';
+export {DiscordClient} from './src/discord-client'

@@ -1,4 +1,5 @@
 {
-    "token": "<DISCORD_TOKEN>",
-    "server_id": "765137571608920074"
+    "token": "<TOKEN>",
+    "server_id": "765137571608920074",
+    "botc_irl_channel": "785448719591538728"
 }

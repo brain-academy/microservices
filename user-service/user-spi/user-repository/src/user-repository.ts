@@ -1,5 +1,6 @@
 import {Pool} from 'pg';
 import {User, UserPort} from 'user-domain';
+import {UserSearch} from 'user-domain/src/user';
 import {v4} from 'uuid/interfaces';
 
 const pool = new Pool({
@@ -20,6 +21,9 @@ export class UserRepository implements UserPort {
     find(id: v4): Promise<User> {
         return pool.query(`SELECT * from users WHERE id = $1`, [id])
             .then(({rows: user}: {rows: User[]}) => user[0])
+    }
+    search(userSearch: UserSearch): Promise<User[]> {
+        throw new Error('Method not implemented.');
     }
     create(user: User): Promise<v4 | undefined> {
         return pool.query(`INSERT into users (name, discord_username) VALUES ($1, $2) RETURNING id`, [user.name, user.discordUserame])

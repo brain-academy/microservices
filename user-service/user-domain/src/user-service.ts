@@ -1,17 +1,22 @@
 import {v4} from 'uuid/interfaces'
-import {User} from './user'
+import {BotcPort} from './botc-port'
+import {DayOfWeek} from './day-of-week'
+import {User, UserSearch} from './user'
 import {UserPort} from './user-port'
 
 export class UserService {
 
     constructor(
-        public port: UserPort
+        public userPort: UserPort,
+        public botcPort: BotcPort
     ) { }
 
-    find_all: () => Promise<User[]> = () => this.port.findAll()
-    get_user: (id: v4) => Promise<User> = id => this.port.find(id)
-    create_user: (user: User) => Promise<v4 | undefined> = user => this.port.create(user)
-    update_user: (id: v4, user: User) => void = (id, user) => this.port.update(id, user)
-    delete_user: (id: v4) => void = id => this.port.delete(id)
+    findAll: () => Promise<User[]> = () => this.userPort.findAll()
+    find: (id: v4) => Promise<User> = id => this.userPort.find(id)
+    search: (userSearch: UserSearch) => Promise<User[]> = (userSearch) => this.userPort.search(userSearch)
+    create: (user: User) => Promise<v4 | undefined> = user => this.userPort.create(user)
+    update: (id: v4, user: User) => void = (id, user) => this.userPort.update(id, user)
+    delete: (id: v4) => void = id => this.userPort.delete(id)
+    getBotcSubscriptions: () => Promise<Map<DayOfWeek, User[]>> = () => this.botcPort.getBotcSubscriptions()
 
 }
