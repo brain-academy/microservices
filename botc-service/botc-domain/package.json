@@ -1,0 +1,18 @@
+{
+    "name": "botc-domain",
+    "version": "0.0.1",
+    "private": true,
+    "main": "dist/index",
+    "types": "dist/index",
+    "scripts": {
+        "prepare": "tsc --build --force tsconfig.json",
+        "test": "jest"
+    },
+    "dependencies": {
+        "uuidv4": "6.2.6",
+        "uuid": "8.3.2"
+    },
+    "devDependencies": {
+        "@types/uuid": "3.4.3"
+    }
+}

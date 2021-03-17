@@ -1,10 +1,10 @@
 {
     "references": [
         {
-            "path": "./user-service"
+            "path": "./botc-rest"
         },
         {
-            "path": "./botc-service"
+            "path": "../botc-domain"
         }
     ],
     "files": [],

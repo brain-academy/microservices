@@ -1,0 +1,16 @@
+{
+    "name": "botc-service",
+    "version": "0.0.1",
+    "private": true,
+    "workspaces": [
+        "botc-domain/**",
+        "botc-boot/**",
+        "botc-api/**",
+        "botc-spi/**"
+    ],
+    "scripts": {
+        "prepare": "npm run compile",
+        "compile": "tsc --build --force tsconfig.json",
+        "start": "node botc-boot"
+    }
+}

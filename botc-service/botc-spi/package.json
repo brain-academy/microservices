@@ -1,0 +1,8 @@
+{
+    "name": "botc-spi",
+    "version": "0.0.1",
+    "private": true,
+    "workspaces": [
+        "botc-discord-client"
+    ]
+}

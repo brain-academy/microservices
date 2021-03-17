@@ -1,0 +1,23 @@
+{
+    "extends": "../../../tsconfig.packages.json",
+    "compilerOptions": {
+        "rootDir": ".",
+        "outDir": "dist",
+        "allowSyntheticDefaultImports": true,
+        "esModuleInterop": true,
+        "resolveJsonModule": true,
+        "moduleResolution": "node",
+        "downlevelIteration": true
+    },
+    "include": [
+        "config.json",
+        "index.ts",
+        "src/**/*.ts",
+        "test/**/*.ts"
+    ],
+    "references": [
+        {
+            "path": "../../botc-domain"
+        }
+    ]
+}

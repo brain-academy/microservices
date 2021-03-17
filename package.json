@@ -3,7 +3,8 @@
     "version": "0.0.1",
     "private": true,
     "workspaces": [
-        "user-service/**"
+        "user-service/**",
+        "botc-service/**"
     ],
     "scripts": {
         "prepare": "npm run compile",

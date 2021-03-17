@@ -1,0 +1,22 @@
+{
+    "extends": "../tsconfig.packages.json",
+    "references": [
+        {
+            "path": "./botc-domain"
+        },
+        {
+            "path": "./botc-boot"
+        },
+        {
+            "path": "./botc-api"
+        },
+        {
+            "path": "./botc-spi"
+        }
+    ],
+    "files": [],
+    "include": [],
+    "exclude": [
+        "**/node_modules"
+    ]
+}
