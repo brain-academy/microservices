@@ -9,6 +9,13 @@ services:
           - "database"
         networks:
             - microservices-network
+    botc-service:
+        build: ./botc-service
+        container_name: "botc-service"
+        ports:
+          - "3002:3000"
+        networks:
+            - microservices-network
     database:
         image: postgres
         container_name: "database"

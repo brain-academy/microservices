@@ -1,10 +1,10 @@
 import Discord, {GuildMember} from 'discord.js'
-import {DayOfWeek, User} from 'user-domain'
+import {User} from 'user-domain'
 
-export default function mapGuildMember(member: ([string, GuildMember])): User {
-    return new User(member[1].displayName, member[1].displayName)
+export default function mapGuildMember({id, displayName}: GuildMember): User {
+    return new User(displayName, {username: displayName, id: id})
 }
 
 export function mapDiscordUser(user: Discord.User): User {
-    return new User(user.username, user.username)
+    return new User(user.username, {username: user.username, id: user.id})
 }

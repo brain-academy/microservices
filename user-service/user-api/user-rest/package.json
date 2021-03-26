@@ -13,7 +13,8 @@
         "user-repository": "0.0.1",
         "user-discord-client": "0.0.1",
         "express": "~4.16.1",
-        "uuid": "8.3.2"
+        "uuid": "8.3.2",
+        "cors": "2.8.5"
     },
     "devDependencies": {
         "@babel/core": "^7.12.3",
@@ -25,6 +26,7 @@
         "@types/jest": "^26.0.15",
         "@types/morgan": "^1.9.2",
         "@types/node": "^13.11.1",
-        "@types/uuid": "3.4.3"
+        "@types/uuid": "3.4.3",
+        "@types/cors": "2.8.6"
     }
 }

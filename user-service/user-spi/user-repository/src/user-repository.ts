@@ -26,12 +26,12 @@ export class UserRepository implements UserPort {
         throw new Error('Method not implemented.');
     }
     create(user: User): Promise<v4 | undefined> {
-        return pool.query(`INSERT into users (name, discord_username) VALUES ($1, $2) RETURNING id`, [user.name, user.discordUserame])
+        return pool.query(`INSERT into users (name, discord_username) VALUES ($1, $2) RETURNING id`, [user.name, user.discord.username])
             .then(({rows}: {rows: {id: v4 | undefined}[]}) => {return rows[0].id})
     }
     update(id: v4, user: User): void {
         pool.query(`UPDATE users SET name = $1, discord_username = $2 WHERE id = $4`,
-            [user.name, user.discordUserame, id])
+            [user.name, user.discord.username, id])
     }
     delete(id: v4): void {
         pool.query(`DELETE from users where id = $1`, [id])

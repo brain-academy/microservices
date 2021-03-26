@@ -5,6 +5,7 @@ import logger from 'morgan'
 import path from 'path'
 import index_router from './src/routes/index'
 import userController from 'user-rest'
+import cors from 'cors'
 
 let app: Express = express()
 const port = 3000
@@ -18,6 +19,7 @@ app.use(express.urlencoded({extended: false}))
 app.use(cookieParser())
 app.use(express.static(path.join(__dirname, 'public')))
 
+app.use(cors())
 app.use('/', index_router)
 app.use('/users', userController)
 
