@@ -1,5 +1,5 @@
 {
-    "name": "botc-boot",
+    "name": "event-boot",
     "version": "0.0.1",
     "private": true,
     "main": "dist/index",
@@ -30,6 +30,6 @@
         "http-errors": "~1.6.3",
         "jade": "~1.11.0",
         "morgan": "~1.9.1",
-        "botc-rest": "0.0.1"
+        "event-rest": "0.0.1"
     }
 }

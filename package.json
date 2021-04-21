@@ -4,7 +4,7 @@
     "private": true,
     "workspaces": [
         "user-service/**",
-        "botc-service/**"
+        "event-service/**"
     ],
     "scripts": {
         "prepare": "npm run compile",

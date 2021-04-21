@@ -2,16 +2,16 @@
     "extends": "../tsconfig.packages.json",
     "references": [
         {
-            "path": "./botc-domain"
+            "path": "./event-domain"
         },
         {
-            "path": "./botc-boot"
+            "path": "./event-boot"
         },
         {
-            "path": "./botc-api"
+            "path": "./event-api"
         },
         {
-            "path": "./botc-spi"
+            "path": "./event-spi"
         }
     ],
     "files": [],

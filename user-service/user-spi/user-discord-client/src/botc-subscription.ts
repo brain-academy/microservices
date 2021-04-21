@@ -6,13 +6,13 @@ export function getBotcSubscriptions(message: Message): Promise<Map<DayOfWeek, U
     const days = fromMessage(message)
     const reactions = message.reactions.cache.array()
     const emojis = reactions.map(reaction => reaction.emoji.name)
-    if (days.length > 1 && emojis.includes('good'))
-        throw new Error(':good: emote alors que le message contient plusieurs jours d\'invitation possibles')
+    if (days.length > 1 && emojis.includes('250pxBMR_Logo'))
+        console.log(':good: emote alors que le message contient plusieurs jours d\'invitation possibles')
     if (days.length === 1 && !emojis.includes('good'))
-        throw new Error('Un seul jour d\'invitation et pas d\'emote :good:')
+        console.log('Un seul jour d\'invitation et pas d\'emote :good:')
     if (days.length === 1) {
         return (reactions
-            .find(reaction => reaction.emoji.name === 'good') as MessageReaction).users
+            .find(reaction => reaction.emoji.name === '250pxBMR_Logo') as MessageReaction).users
             .fetch()
             .then(users => users.array().map(user => mapDiscordUser(user)))
             .then(users => new Map([[days[0], users]]))

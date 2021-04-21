@@ -1,8 +1,8 @@
 {
-    "name": "botc-spi",
+    "name": "event-api",
     "version": "0.0.1",
     "private": true,
     "workspaces": [
-        "botc-discord-client"
+        "event-rest"
     ]
 }

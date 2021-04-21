@@ -1,11 +1,11 @@
-import {DiscordClient} from 'botc-discord-client'
-import {BotcService} from 'botc-domain'
+import {DiscordClient} from 'event-discord-client'
+import {EventService} from 'event-domain'
 import express, {Request, Response} from 'express'
 
 let botcRouter = express.Router()
 
 botcRouter.post('/event', ({body}: Request, response: Response) => {
-    new BotcService(new DiscordClient()).postInvite(body.message)
+    new EventService(new DiscordClient()).postInvite(body.message)
     return response.status(200).send()
 })
 

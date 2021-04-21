@@ -1,5 +1,5 @@
 {
-    "name": "botc-discord-client",
+    "name": "event-discord-client",
     "version": "0.0.1",
     "private": true,
     "main": "dist/index",
@@ -9,7 +9,7 @@
         "test": "jest"
     },
     "dependencies": {
-        "botc-domain": "0.0.1",
+        "event-domain": "0.0.1",
         "discord.js": "^12.5.1",
         "tslib": "^2.1.0"
     }

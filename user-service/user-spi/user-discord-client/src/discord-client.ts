@@ -39,8 +39,8 @@ export class DiscordClient implements UserPort, DiscordPort {
     }
     getBotcSubscriptions(): Promise<Map<DayOfWeek, User[]>> {
         return client.channels.fetch(config.botc_irl_channel)
-            .then(channel => (<TextChannel>channel).messages.fetch({limit: 3}))
-            .then(messages => getBotcSubscriptions(messages.array()[2]))
+            .then(channel => (<TextChannel>channel).messages.fetch({limit: 1}))
+            .then(messages => getBotcSubscriptions(messages.array()[0]))
     }
     create(user: User): Promise<v4 | undefined> {
         throw new Error('Method not implemented.')

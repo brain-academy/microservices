@@ -1,4 +1,4 @@
-export interface BotcPort {
+export interface EventPort {
 
     postInvite(message: string): void
 

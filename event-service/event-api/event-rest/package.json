@@ -1,5 +1,5 @@
 {
-    "name": "botc-rest",
+    "name": "event-rest",
     "version": "0.0.1",
     "private": true,
     "main": "dist/index",
@@ -9,8 +9,8 @@
         "test": "jest"
     },
     "dependencies": {
-        "botc-domain": "0.0.1",
-        "botc-discord-client": "0.0.1",
+        "event-domain": "0.0.1",
+        "event-discord-client": "0.0.1",
         "express": "~4.16.1",
         "uuid": "8.3.2"
     },

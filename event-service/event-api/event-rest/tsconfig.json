@@ -4,20 +4,16 @@
         "rootDir": ".",
         "outDir": "dist",
         "allowSyntheticDefaultImports": true,
-        "esModuleInterop": true,
-        "resolveJsonModule": true,
-        "moduleResolution": "node",
-        "downlevelIteration": true
+        "esModuleInterop": true
     },
     "include": [
-        "config.json",
         "index.ts",
         "src/**/*.ts",
         "test/**/*.ts"
     ],
     "references": [
         {
-            "path": "../../botc-domain"
+            "path": "../../event-domain"
         }
     ]
 }

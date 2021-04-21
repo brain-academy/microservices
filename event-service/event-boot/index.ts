@@ -4,7 +4,7 @@ import createError from 'http-errors'
 import logger from 'morgan'
 import path from 'path'
 import index_router from './src/routes/index'
-import botcController from 'botc-rest'
+import eventController from 'event-rest'
 
 let app: Express = express()
 const port = 3000
@@ -18,8 +18,7 @@ app.use(express.urlencoded({extended: false}))
 app.use(cookieParser())
 app.use(express.static(path.join(__dirname, 'public')))
 
-app.use('/', index_router)
-app.use('/botc', botcController)
+app.use('/', eventController)
 
 // catch 404 and forward to error handler
 app.use((_request: Request, _response: Response, next: NextFunction) => next(createError(404)))
