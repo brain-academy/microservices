@@ -8,8 +8,7 @@
     ],
     "scripts": {
         "prepare": "npm run compile",
-        "compile": "tsc --build --force tsconfig.json",
-        "start": "node user-service/user-boot"
+        "compile": "tsc --build --force tsconfig.json"
     },
     "publishConfig": {
         "registry": "https://npm.pkg.github.com/node-architecture"
