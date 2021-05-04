@@ -3,16 +3,17 @@ import {DayOfWeek, User} from 'user-domain'
 import {mapDiscordUser} from './user-mapper'
 
 export function getBotcSubscriptions(message: Message): Promise<Map<DayOfWeek, User[]>> {
-    const days = fromMessage(message)
+    const days = fromMessage(!!message.content ? message.content : message.embeds[0].description || '')
     const reactions = message.reactions.cache.array()
     const emojis = reactions.map(reaction => reaction.emoji.name)
-    if (days.length > 1 && emojis.includes('250pxBMR_Logo'))
-        console.log(':good: emote alors que le message contient plusieurs jours d\'invitation possibles')
-    if (days.length === 1 && !emojis.includes('good'))
-        console.log('Un seul jour d\'invitation et pas d\'emote :good:')
+    console.log({days, emojis})
+    if (days.length > 1)
+        console.log(`Plusieurs jours trouvés dans le message d'invitation. Impossible de déterminer quel est le jour d'invitation.`)
+    if (days.length === 1 && !emojis.includes('✅'))
+        console.log('Un seul jour d\'invitation et pas d\'emote :✅:')
     if (days.length === 1) {
         return (reactions
-            .find(reaction => reaction.emoji.name === '250pxBMR_Logo') as MessageReaction).users
+            .find(reaction => reaction.emoji.name === '✅') as MessageReaction).users
             .fetch()
             .then(users => users.array().map(user => mapDiscordUser(user)))
             .then(users => new Map([[days[0], users]]))
@@ -47,7 +48,7 @@ function emojiToDayOfWeek(emoji: string): DayOfWeek | null {
     }
 }
 
-function fromMessage({content}: Message): DayOfWeek[] {
+function fromMessage(content: string): DayOfWeek[] {
     return Object.values(DayOfWeek)
         .filter(key => content.includes(key))
 }
