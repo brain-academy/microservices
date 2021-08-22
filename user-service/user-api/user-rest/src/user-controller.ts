@@ -18,7 +18,7 @@ userRouter.route('/')
 
 userRouter.route('/:id')
     .get(({params}: Request, response: Response) => {
-        new UserService(new UserRepository(), new DiscordClient()).find(<v4>(params["id"] as unknown))
+        new UserService(new DiscordClient(), new DiscordClient()).find(<string>(params["id"] as unknown))
             .then(user => response.send(user))
     })
     .put(({params, body}: Request, response: Response) => {

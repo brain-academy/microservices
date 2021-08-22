@@ -12,5 +12,8 @@
         "prepare": "npm run compile",
         "compile": "tsc --build --force tsconfig.json",
         "start": "node user-boot"
+    },
+    "dependencies": {
+        "tslib": "^2.3.0"
     }
 }

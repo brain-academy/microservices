@@ -18,7 +18,7 @@ export class UserRepository implements UserPort {
         return pool.query(`SELECT * from users`)
             .then(({rows: users}: {rows: User[]}) => users)
     }
-    find(id: v4): Promise<User> {
+    find(id: string): Promise<User> {
         return pool.query(`SELECT * from users WHERE id = $1`, [id])
             .then(({rows: user}: {rows: User[]}) => user[0])
     }

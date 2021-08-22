@@ -12,7 +12,7 @@ export class UserService {
     ) { }
 
     findAll: () => Promise<User[]> = () => this.userPort.findAll()
-    find: (id: v4) => Promise<User> = id => this.userPort.find(id)
+    find: (id: string) => Promise<User> = id => this.userPort.find(id)
     search: (userSearch: UserSearch) => Promise<User[]> = (userSearch) => this.userPort.search(userSearch)
     create: (user: User) => Promise<v4 | undefined> = user => this.userPort.create(user)
     update: (id: v4, user: User) => void = (id, user) => this.userPort.update(id, user)

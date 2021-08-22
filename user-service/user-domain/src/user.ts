@@ -4,6 +4,11 @@ export interface User {
     id?: v4
     name: string
     discord: DiscordInfo
+	roles: Role[]
+}
+
+export interface Role {
+	name: string
 }
 
 type DiscordInfo = {
@@ -12,7 +17,7 @@ type DiscordInfo = {
 }
 
 export class User implements User {
-    constructor(public name: string, public discord: DiscordInfo) {
+    constructor(public name: string, public discord: DiscordInfo, public roles: Role[] = []) {
     }
 }
 

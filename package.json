@@ -20,5 +20,9 @@
     },
     "license": "Apache-2.0",
     "author": "David Urvoy <https://github.com/david-urvoy>",
-    "keywords": []
+    "keywords": [],
+    "dependencies": {},
+    "devDependencies": {
+        "@types/babel__core": "^7.1.15"
+    }
 }
