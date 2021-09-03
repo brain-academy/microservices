@@ -11,9 +11,9 @@ export interface Role {
 	name: string
 }
 
-type DiscordInfo = {
+interface DiscordInfo {
     id: string
-    username: string
+    username?: string | null
 }
 
 export class User implements User {

@@ -1,8 +1,8 @@
 import Discord, {GuildMember} from 'discord.js'
 import {Role, User} from 'user-domain'
 
-export default function mapGuildMember({id, displayName, roles}: GuildMember): User {
-    return new User(displayName, {username: displayName, id: id})
+export default function mapGuildMember({id, displayName, user: {username}}: GuildMember): User {
+	return new User(username, {username: displayName, id: id})
 }
 
 export function mapDiscordRole(role: Discord.Role): Role {
@@ -10,5 +10,5 @@ export function mapDiscordRole(role: Discord.Role): Role {
 }
 
 export function mapDiscordUser(user: Discord.User): User {
-    return new User(user.username, {username: user.username, id: user.id})
+	return new User(user.username, {username: user.username, id: user.id})
 }
