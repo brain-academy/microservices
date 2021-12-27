@@ -14,6 +14,7 @@ export interface Role {
 interface DiscordInfo {
     id: string
     username?: string | null
+	avatar?: string | null
 }
 
 export class User implements User {
